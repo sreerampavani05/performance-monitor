@@ -1,0 +1,57 @@
+$app-left: left;
+$app-right: right;
+
+// generic mixin for properties with values
+// (top right bottom left)
+// ------------------------------------------
+@mixin app-compact($property, $top, $right, $bottom, $left) {
+  #{$property}: $top $right $bottom $left;
+}
+
+// padding
+// ------------------------------------------
+@mixin padding-left($distance) {
+  padding-#{$app-left}: $distance;
+}
+
+@mixin padding-right($distance) {
+  padding-#{$app-right}: $distance;
+}
+
+@mixin padding($top, $right, $bottom, $left) {
+  @include app-compact(padding, $top, $right, $bottom, $left);
+}
+
+// margin
+// ------------------------------------------
+@mixin margin-left($distance) {
+  margin-#{$app-left}: $distance;
+}
+
+@mixin margin-right($distance) {
+  margin-#{$app-right}: $distance;
+}
+
+@mixin margin($top, $right, $bottom, $left) {
+  @include app-compact(margin, $top, $right, $bottom, $left);
+}
+
+// float
+// ------------------------------------------
+@mixin app-float-left($important: "") {
+  float: $app-left unquote($important);
+}
+
+@mixin app-float-right($important: "") {
+  float: $app-right unquote($important);
+}
+
+@mixin float($direction, $important: "") {
+  @if $direction == left {
+    @include app-float-left($important);
+  } @else if $direction == right {
+    @include app-float-right($important);
+  } @else {
+    float: $direction;
+  }
+}

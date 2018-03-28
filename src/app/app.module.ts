@@ -3,6 +3,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
+import { MaterialModule } from './shared/material.module';
 import { AppComponent } from './app.component';
 
 @NgModule({
@@ -12,7 +13,8 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    FormsModule
+    FormsModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
