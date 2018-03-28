@@ -1,0 +1,44 @@
+//header
+mat-toolbar {
+    &.main-header {
+        padding: 0 8px;
+        position: relative;
+        box-shadow: 0 1px 8px rgba(0,0,0,.3);
+        z-index: 9;
+        .branding {
+            display: -webkit-box;
+            display: -moz-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;              
+            padding: 16px; 
+            font-size: 26px;
+            font-weight: 500;            
+            .logo {
+                padding: 0.4rem;
+                height: 2.077rem;
+                width: auto;                                                  
+            }
+
+            img {
+                position: relative;
+                vertical-align: middle;
+                border-style: none;
+            }
+        }        
+    }
+}
+
+// Specific height for mobile devices in portrait mode.
+@media ($mat-xsmall) and (orientation: portrait) {
+    mat-toolbar {
+      &.main-header {
+        .branding {
+            font-size: 20px;            
+        }        
+      }
+    }
+  }
